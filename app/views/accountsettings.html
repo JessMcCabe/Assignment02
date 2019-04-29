@@ -5,23 +5,23 @@
 
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
-        <form class="ui stacked segment form" action="/accountsettings/updatemember" method="GET">
+        <form class="ui form" action="/accountsettings/updatemember" method="GET">
             <h3 class="ui header">Account Details</h3>
             <div class="two fields">
-                <div class="field">
+                <div class=" required field">
                     <label>Name</label>
                     <input placeholder=${member.name} type="text" name="name">
                 </div>
-                <div class="field">
+                <div class="required field">
                     <label>Gender</label>
                     <input placeholder=${member.gender} type="text" name="gender">
                 </div>
             </div>
-            <div class="field">
+            <div class="required field">
                 <label>Email</label>
                 <input placeholder=${member.email} type="text" name="email">
             </div>
-            <div class="field">
+            <div class="required field">
                 <label>Password</label>
                 <input type="password" name="password">
             </div>
@@ -39,14 +39,8 @@
                     <span class="date">Joined in 2013</span>
                 </div>
                 <div class="description">
-                    Kristy is an art director living in New York.
+                    Marge is currently training for her first photoshoot
                 </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    22 Friends
-                </a>
             </div>
         </div>
     </div>

@@ -34,17 +34,19 @@ public class Accounts extends Controller
         redirect("/");
     }
 
-    public static void updateMember(String email, String password)
+    public static void updateMember(String name, String email, String gender,String password)
     {
 
         Member member = Accounts.getLoggedInMember();
         Logger.info("Updating user details " + member.getName());
+        member.setName(name);
+        member.setGender(gender);
         member.setEmail(email);
         member.setPassword(password);
         member.save();
 
         session.clear();
-        redirect("/accountsettings.html");
+        redirect("/accountsettings");
     }
 
 
@@ -88,7 +90,7 @@ public class Accounts extends Controller
     public static void settings()
     {
         Member member = Accounts.getLoggedInMember();
-        member.setName( member.getName().toUpperCase());
+        member.setName(member.getName().toUpperCase());
         render("accountsettings.html",member);
     }
 

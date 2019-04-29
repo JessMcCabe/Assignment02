@@ -23,6 +23,8 @@ private static String ideal;
     Member member = Accounts.getLoggedInMember();
     Assessment assessment = new Assessment(weight,chest,thigh,upperArm,waist,hips,comments,date);
     member.assessments.add(assessment);
+    member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(),assessment.getWeight())));
+    member.setBmi(Utility.determineBMI(member.getHeight(),assessment.getWeight()));
     member.save();
     Logger.info("Adding Assessment" + weight,chest,thigh,upperArm,waist,hips,date);
     Logger.info("isIdealBodyWeight" + isIdealBodyWeight);
