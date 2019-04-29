@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'TrainerDashboard' /}
+
+#{trainermenu id:"dashboard"/}
+
+<section class="ui segment">
+  <header class="ui header"></header>
+    <div class="ui equal width four column grid">
+      <div class ="column">
+    <i class="huge icon user"></i>
+      <div class="row">
+  ${trainer.name}
+    </div>
+      </div>
+    </div>
+</section>
+<section>
+#{listmembers members:members/}
+</section>

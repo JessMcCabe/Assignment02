@@ -1,0 +1,33 @@
+<section class="ui segment">
+    <header class="ui header"></header>
+    <div class="ui equal width four column grid">
+        <div class ="column">
+            <i class="huge icon user"></i>
+            <div class="row">
+                ${member.name}
+            </div>
+        </div>
+        <div class ="column">
+            <i class=" ${member.ideal} huge icon tachometer alternate"></i>
+            <div class="row">
+                IDEAL WEIGHT INDICATOR
+            </div>
+        </div>
+        <div class ="column">
+            <i class="huge icon heartbeat"></i>
+            <div class="row">
+                BMI ${member.bmi}
+            </div>
+        </div>
+        <div class ="column">
+            <i class="huge icon user doctor"></i>
+            <div class="row">
+                ${member.bmiCategory}
+            </div>
+        </div>
+    </div>
+    </header>
+</section>
+
+<!-- This would be a partial as it is used in the trainer view of the member and the members own view of their own dashboard - need to pass the member in for it to work
+ come back to this after the trainer functionality is complete -->

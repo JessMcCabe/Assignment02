@@ -1,0 +1,53 @@
+#{extends 'main.html' /}
+#{set title:'AccountSettings' /}
+
+#{menu id:"settings"/}
+
+<div class="ui two column grid basic middle aligned segment">
+    <div class="column">
+        <form class="ui stacked segment form" action="/accountsettings/updatemember" method="GET">
+            <h3 class="ui header">Account Details</h3>
+            <div class="two fields">
+                <div class="field">
+                    <label>Name</label>
+                    <input placeholder=${member.name} type="text" name="name">
+                </div>
+                <div class="field">
+                    <label>Gender</label>
+                    <input placeholder=${member.gender} type="text" name="gender">
+                </div>
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input placeholder=${member.email} type="text" name="email">
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+            <button class="ui blue submit button">Submit</button>
+        </form>
+    </div>
+    <div class="column">
+        <div class="ui card">
+            <div class="image">
+                <img src="public/images/person-avatar.png">
+            </div>
+            <div class="content">
+                <a class="header">${member.name}</a>
+                <div class="meta">
+                    <span class="date">Joined in 2013</span>
+                </div>
+                <div class="description">
+                    Kristy is an art director living in New York.
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="user icon"></i>
+                    22 Friends
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+Assessment(a1):
+  weight: 123.3
+  chest: 45.0
+  thigh: 12.5
+  upperArm: 23.3
+  waist: 32.0
+  hips: 38.0
+  comments: good work
+  date: 2019-04-16 19:19:58.297
+
+
+Member(m1):
+  name: homer simpson
+  gender: male
+  email: homer@simpson.com
+  password: secret
+  height: 5.8
+  startWeight: 139.7
+
+
+
+Member(m2):
+  name: marge simpson
+  gender: female
+  email: marge@simpson.com
+  password: secret
+  height: 5.9
+  startWeight: 50.7
+  assessments:
+  - a1
+
+Trainer(t1):
+  name: Tough Guy
+  gender: male
+  email: tough@guy.com
+  password: secret
+  members:
+  - m1
+  - m2
