@@ -50,6 +50,7 @@ private static String ideal;
     Trainer trainer = Accounts.getLoggedInTrainer();
     trainer.setName (trainer.getName().toUpperCase());
     List<Member> members = trainer.members;
+    //Assessment assessments = members.assessment;
     render("trainerdashboard.html", trainer, members);
   }
 

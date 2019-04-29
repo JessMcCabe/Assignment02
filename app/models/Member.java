@@ -27,6 +27,7 @@ public class Member extends Person
     private static float additionalWeight = 2.3f;
     private static float inchesOver;
     private static float weightAllowed;
+    private static int numOfAssessments =0;
 
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -131,4 +132,9 @@ public class Member extends Person
         this.bmiCategory = bmiCategory;
     }
 
+    public  int getNumOfAssessments() {
+        List<Assessment> numOfAssessments = getAssessments();
+        return numOfAssessments.size();
+
+    }
 }

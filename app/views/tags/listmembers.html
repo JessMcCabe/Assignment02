@@ -1,23 +1,22 @@
-<table class="ui celled table">
-    <thead>
-    <tr>
-        <th>Members</th>
-    </tr>
-    </thead>
+<table class="ui table">
     <tbody>
-    <div>
+ <tr>
         #{list items:_members, as:'members'}
-        <tr>
-            <td>
-               <a href ="/trainerdashboard/listmemberassessments/${members.id}">${members.name}</a>
-            </td>
-            <td>
-                <a href="/trainerdashboard/deletemember/${members.id}" class="ui icon button">
-                    <i class="icon trash"></i>
-                </a>
-            </td>
         </tr>
+ <tr>
+     <td>
+         <h4 class="ui image header">
+             <img src="/public/images/member.png" class="ui mini rounded image">
+             <div class="content">
+                 <a href ="/trainerdashboard/listmemberassessments/${members.id}">${members.name}</a>
+                 <div class="sub header">${members.numOfAssessments} assessments
+                 </div>
+             </div>
+         </h4>
+     <a href="/trainerdashboard/deletemember/${members.id}" class="ui icon button">
+         <i class="red icon trash alternate"></i>
+     </a>
+     </td>
         #{/list}
-    </div>
     </tbody>
 </table>
