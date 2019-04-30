@@ -7,6 +7,7 @@ import models.Trainer;
 
 import java.util.List;
 import java.util.Date;
+import java.lang.Math;
 
 public class Utility{
 
@@ -22,13 +23,13 @@ private static float weightAllowed;
         if(member.getGender().toUpperCase().equals("MALE")){//if the member is male
             if(member.getHeight()<=5){
 
-                if(assessment.getWeight() <= 50){
+                if(assessment.getWeight() <= 52 & assessment.getWeight() >= 48){
                     ideal = true;
                 }
             }
             else if (member.getHeight() >5){
 
-                inchesOver = member.getHeight() - 5;
+                inchesOver = member.getHeight() - 5*10;
                 weightAllowed = (maleBaseWeight + ((float)inchesOver*additionalWeight));
                 if(assessment.getWeight() <= weightAllowed){
 
@@ -43,15 +44,15 @@ private static float weightAllowed;
         else     if(member.getGender().toUpperCase().equals("FEMALE")){//if the member is female
             if(member.getHeight()<=5){
 
-                if(assessment.getWeight() <= 45.5){
+                if(assessment.getWeight() <= 47.5 & assessment.getWeight() >= 43.5){
                     ideal = true;
                 }
             }
             else if (member.getHeight() >5){
 
-                inchesOver = member.getHeight() - 5;
+                inchesOver = (member.getHeight() - 5)*10;
                 weightAllowed = (femaleBaseWeight + ((float)inchesOver*additionalWeight));
-                if(assessment.getWeight() <= weightAllowed){
+                if(assessment.getWeight() <= (weightAllowed+2) & assessment.getWeight() >= (weightAllowed-2)){
 
                     ideal = true;
                 }
@@ -67,7 +68,7 @@ private static float weightAllowed;
     public static float determineBMI(float height,float weight){
         //weight in kg over height (in cm squared)
         float heightM = height / 3.28f; //this is the height in meters
-        return weight/(heightM*heightM);
+        return Math.round((weight/(heightM*heightM)*100)/100);
 
     }
 
