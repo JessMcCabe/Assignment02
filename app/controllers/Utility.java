@@ -106,4 +106,29 @@ private static float weightAllowed;
 
 
     }
+
+    public static String determineTrend(double totalMeasure1, double totalMeasure2) {
+        //trend will be pos-trend (as in posotive progress ie green) if total measurements are down
+        //else trend will be neg-trend
+        //compare assessment1 (being most recent) to assessment2 which is the previous one
+        //default to green if only 1 assessment
+
+        String trend = "";
+
+
+        if (totalMeasure1 <= totalMeasure2){
+            trend = "pos-trend.PNG";
+        }
+        else if (totalMeasure1 > totalMeasure2) {
+            trend = "neg-trend.PNG";
+
+        } else {
+
+            trend = "pos-trend.PNG";
+        }
+
+        return trend;
+    }
+
+
 }

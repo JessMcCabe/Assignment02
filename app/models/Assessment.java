@@ -23,6 +23,8 @@ public class Assessment extends Model
     public double hips;
     public String comments;
     public Date date;
+    public String trend;
+    public double totalMeasure;
 
 
     public Assessment(float weight, double chest,double thigh,double upperArm,double waist,double hips, String comments, Date date)
@@ -35,6 +37,8 @@ public class Assessment extends Model
         this.hips = hips;
         this.comments = comments;
         this.date = date;
+        setTotalMeasure(chest, thigh, upperArm, waist, hips);
+
     }
 
     public float getWeight() {
@@ -100,4 +104,22 @@ public class Assessment extends Model
     public void setDate(Date date) {
         this.date = date;
     }
+    public String getTrend() {
+        return trend;
+    }
+
+    public void setTrend(String trend) {
+        this.trend = trend;
+    }
+
+    public  double getTotalMeasure() {
+        return totalMeasure;
+    }
+
+    public  void setTotalMeasure( double chest,double thigh,double upperArm,double waist,double hips) {
+       this.totalMeasure =  chest + thigh + upperArm + waist + hips;
+    }
+
+
+
 }

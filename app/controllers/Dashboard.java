@@ -25,6 +25,9 @@ private static String ideal;
     member.assessments.add(assessment);
     member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(),assessment.getWeight())));
     member.setBmi(Utility.determineBMI(member.getHeight(),assessment.getWeight()));
+
+    List<Assessment> assessments = member.assessments;
+    assessment.setTrend(Utility.determineTrend(assessment.getTotalMeasure(),assessments.get(assessments.size()-2).getTotalMeasure()));
     member.save();
     Logger.info("Adding Assessment" + weight,chest,thigh,upperArm,waist,hips,date);
     Logger.info("isIdealBodyWeight" + isIdealBodyWeight);
@@ -62,7 +65,8 @@ private static String ideal;
     List<Assessment> assessments = member.assessments;
     member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(),assessments.get(assessments.size()-1).getWeight())));
     member.setBmi(Utility.determineBMI(member.getHeight(),assessments.get(assessments.size()-1).getWeight()));
-    isIdealBodyWeight = Utility.isIdealBodyWeight(member,assessments.get(assessments.size()-1)); //run this against the most recent assessment available
+    isIdealBodyWeight = Utility.isIdealBodyWeight(member,assessments.get(assessments.size()-1));
+    //assessment.determineTrend(assessments.get(assessments.size()-1).getTotalMeasure(),assessments.get(assessments.size()-2).getTotalMeasure());
     if(isIdealBodyWeight){
       member.setIdeal("green");
     }

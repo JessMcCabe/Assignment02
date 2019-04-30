@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member extends Person
-{
-
+public class Member extends Person {
 
 
     private float height;
@@ -27,27 +25,24 @@ public class Member extends Person
     private static float additionalWeight = 2.3f;
     private static float inchesOver;
     private static float weightAllowed;
-    private static int numOfAssessments =0;
+    private static int numOfAssessments = 0;
 
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Assessment> assessments = new ArrayList<>();
 
-    public Member(String name, String email, String address, String gender, String password, float height, float startWeight)
-    {
-        super(name,email,address,gender,password);
+    public Member(String name, String email, String address, String gender, String password, float height, float startWeight) {
+        super(name, email, address, gender, password);
         this.height = height;
         this.startWeight = startWeight;
 
     }
 
-   public static Member findByEmail(String email)
-    {
+    public static Member findByEmail(String email) {
         return find("email", email).first();
     }
 
-    public boolean checkPassword(String password)
-    {
+    public boolean checkPassword(String password) {
         return super.getPassword().equals(password);
     }
 
@@ -58,7 +53,6 @@ public class Member extends Person
     public void setName(String name) {
         super.setName(name);
     }
-
 
 
     public String getGender() {
@@ -107,7 +101,6 @@ public class Member extends Person
     }
 
 
-
     public static String getIdeal() {
         return ideal;
     }
@@ -132,7 +125,7 @@ public class Member extends Person
         this.bmiCategory = bmiCategory;
     }
 
-    public  int getNumOfAssessments() {
+    public int getNumOfAssessments() {
         List<Assessment> numOfAssessments = getAssessments();
         return numOfAssessments.size();
 
