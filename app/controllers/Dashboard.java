@@ -5,7 +5,8 @@ import models.Member;
 import models.Trainer;
 import play.Logger;
 import play.mvc.Controller;
-
+import java.util.Collections;
+import java.util.Comparator;
 
 import java.util.List;
 import java.util.Date;
@@ -29,9 +30,7 @@ private static String ideal;
     List<Assessment> assessments = member.assessments;
     assessment.setTrend(Utility.determineTrend(assessment.getTotalMeasure(),assessments.get(assessments.size()-2).getTotalMeasure()));
     member.save();
-    Logger.info("Adding Assessment" + weight,chest,thigh,upperArm,waist,hips,date);
-    Logger.info("isIdealBodyWeight" + isIdealBodyWeight);
-    Logger.info("ideal" + ideal);
+    Logger.info("Adding Assessment: Weight: " + weight + " Chest: "+ chest + " Thigh: " + thigh + " UpperArm: " + upperArm + " Waist: " + waist + " Hips: " + hips + " On: " + date);
     redirect("/dashboard");
   }
 
@@ -73,6 +72,7 @@ private static String ideal;
     else {
       member.setIdeal("red");
     }
+
     render("dashboard.html", member, assessments);
   }
 
@@ -122,7 +122,7 @@ private static String ideal;
     assessment.setComments(Comments);
     //member.save();
     assessment.save();
-    Logger.info("Adding Assessment Comment" + Comments);
+    Logger.info("Adding Assessment Comment " + Comments);
 
     redirect("/trainerdashboard");
   }

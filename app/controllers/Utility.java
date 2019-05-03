@@ -118,14 +118,14 @@ private static float weightAllowed;
 
 
         if (totalMeasure1 <= totalMeasure2){
-            trend = "pos-trend.PNG";
+            trend = "green";
         }
         else if (totalMeasure1 > totalMeasure2) {
-            trend = "neg-trend.PNG";
+            trend = "red";
 
         } else {
 
-            trend = "pos-trend.PNG";
+            trend = "green";
         }
 
         return trend;
