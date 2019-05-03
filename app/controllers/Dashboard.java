@@ -65,7 +65,7 @@ private static String ideal;
     member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(),assessments.get(assessments.size()-1).getWeight())));
     member.setBmi(Utility.determineBMI(member.getHeight(),assessments.get(assessments.size()-1).getWeight()));
     isIdealBodyWeight = Utility.isIdealBodyWeight(member,assessments.get(assessments.size()-1));
-    //assessment.determineTrend(assessments.get(assessments.size()-1).getTotalMeasure(),assessments.get(assessments.size()-2).getTotalMeasure());
+    assessment.determineTrend(assessments.get(assessments.size()-1).getTotalMeasure(),assessments.get(assessments.size()-2).getTotalMeasure());
     if(isIdealBodyWeight){
       member.setIdeal("green");
     }
