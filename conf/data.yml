@@ -22,6 +22,30 @@ Assessment(a2):
   comments: good work
   date: 2019-04-16 16:21:58.297
 
+Assessment(a3):
+  weight: 121.3
+  chest: 44.0
+  thigh: 11.5
+  upperArm: 22.3
+  waist: 31.0
+  trend: green
+  hips: 37.0
+  totalMeasure: 145.8
+  comments: good work
+  date: 2019-05-16 16:19:58.297
+
+Assessment(a4):
+  weight: 88.3
+  chest: 32.8
+  thigh: 19.5
+  upperArm: 15.3
+  waist: 33.3
+  trend: green
+  hips: 35.0
+  totalMeasure: 135.9
+  comments: what happened?
+  date: 2019-05-03 16:21:58.297
+
 Member(m1):
   name: homer simpson
   gender: male
@@ -31,7 +55,7 @@ Member(m1):
   startWeight: 139.7
   assessments:
     - a1
-
+    - a3
 
 Member(m2):
   name: marge simpson
@@ -42,6 +66,7 @@ Member(m2):
   startWeight: 50.7
   assessments:
   - a2
+  - a4
 
 Trainer(t1):
   name: Tough Guy
