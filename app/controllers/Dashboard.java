@@ -51,7 +51,9 @@ private static String ideal;
     Logger.info("Rendering Trainer Dashboard");
     Trainer trainer = Accounts.getLoggedInTrainer();
     trainer.setName (trainer.getName().toUpperCase());
-      List<Member> members = trainer.members;
+    //add all members to the trainer
+
+      List<Member> members = members.findAll();
       //Assessment assessments = members.assessment;
 
     render("trainerdashboard.html", trainer, members);
