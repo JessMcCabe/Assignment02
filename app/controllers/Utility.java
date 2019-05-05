@@ -63,7 +63,7 @@ private static float weightAllowed;
                 if(member.getGender().toUpperCase().equals("MALE")){//if the member is male
                     if(member.getHeight()<=5){
 
-                        if(member.getStartWeight() <= 52 & member.getStartWeight() >= 48){
+                        if(member.getStartWeight() <= 52 & member.getStartWeight()) >= 48){
                             ideal = true;
                         }
                     }
@@ -84,7 +84,7 @@ private static float weightAllowed;
                 else     if(member.getGender().toUpperCase().equals("FEMALE")){//if the member is female
                     if(member.getHeight()<=5){
 
-                        if(member.getStartWeight() <= 47.5 & member.getStartWeight() >= 43.5){
+                        if(member.getStartWeight() <= 47.5 & member.getStartWeight()) >= 43.5){
                             ideal = true;
                         }
                     }
