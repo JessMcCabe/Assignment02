@@ -51,8 +51,9 @@ private static String ideal;
     Logger.info("Rendering Trainer Dashboard");
     Trainer trainer = Accounts.getLoggedInTrainer();
     trainer.setName (trainer.getName().toUpperCase());
-    List<Member> members = trainer.members;
-    //Assessment assessments = members.assessment;
+      List<Member> members = trainer.members;
+      //Assessment assessments = members.assessment;
+
     render("trainerdashboard.html", trainer, members);
   }
 
@@ -61,16 +62,18 @@ private static String ideal;
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
     member.setName( member.getName().toUpperCase());
-    List<Assessment> assessments = member.assessments;
-    member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(),assessments.get(assessments.size()-1).getWeight())));
-    member.setBmi(Utility.determineBMI(member.getHeight(),assessments.get(assessments.size()-1).getWeight()));
-    isIdealBodyWeight = Utility.isIdealBodyWeight(member,assessments.get(assessments.size()-1));
-    if(isIdealBodyWeight){
-      member.setIdeal("green");
-    }
-    else {
-      member.setIdeal("red");
-    }
+
+      List<Assessment> assessments = member.assessments;
+      member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(), assessments.get(assessments.size() - 1).getWeight())));
+      member.setBmi(Utility.determineBMI(member.getHeight(), assessments.get(assessments.size() - 1).getWeight()));
+      isIdealBodyWeight = Utility.isIdealBodyWeight(member, assessments.get(assessments.size() - 1));
+      if (isIdealBodyWeight) {
+        member.setIdeal("green");
+      } else {
+        member.setIdeal("red");
+      }
+
+
 
     render("dashboard.html", member, assessments);
   }
