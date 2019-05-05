@@ -53,7 +53,7 @@ private static String ideal;
     trainer.setName (trainer.getName().toUpperCase());
     //add all members to the trainer
 
-      List<Member> members = members.findAll();
+      List<Member> members = Member.findAll();
       //Assessment assessments = members.assessment;
 
     render("trainerdashboard.html", trainer, members);
