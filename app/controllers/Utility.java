@@ -41,22 +41,22 @@ private static float weightAllowed;
 
 
         }
-        else     if(member.getGender().toUpperCase().equals("FEMALE")){//if the member is female
-            if(member.getHeight()<=5){
+        else     if(member.getGender().toUpperCase().equals("FEMALE")) {//if the member is female
+            if (member.getHeight() <= 5) {
 
-                if(assessment.getWeight() <= 47.5 & assessment.getWeight() >= 43.5){
+                if (assessment.getWeight() <= 47.5 & assessment.getWeight() >= 43.5) {
+                    ideal = true;
+                }
+            } else if (member.getHeight() > 5) {
+
+                inchesOver = (member.getHeight() - 5) * 10;
+                weightAllowed = (femaleBaseWeight + ((float) inchesOver * additionalWeight));
+                if (assessment.getWeight() <= (weightAllowed + 2) & assessment.getWeight() >= (weightAllowed - 2)) {
+
                     ideal = true;
                 }
             }
-            else if (member.getHeight() >5){
-
-                inchesOver = (member.getHeight() - 5)*10;
-                weightAllowed = (femaleBaseWeight + ((float)inchesOver*additionalWeight));
-                if(assessment.getWeight() <= (weightAllowed+2) & assessment.getWeight() >= (weightAllowed-2)){
-
-                    ideal = true;
-                }
-            }
+        }
 
             public static boolean isIdealBodyWeight(Member member){
                 boolean ideal = false;
