@@ -51,14 +51,9 @@ private static String ideal;
     Logger.info("Rendering Trainer Dashboard");
     Trainer trainer = Accounts.getLoggedInTrainer();
     trainer.setName (trainer.getName().toUpperCase());
-    try {
       List<Member> members = trainer.members;
       //Assessment assessments = members.assessment;
-    }
-    catch(Exception e){
-      Logger.info("No members to show for trainer" + trainer.getName());
-      render("trainerdashboard.html", trainer);
-    }
+    
     render("trainerdashboard.html", trainer, members);
   }
 
