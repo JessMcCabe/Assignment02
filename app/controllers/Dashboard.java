@@ -76,6 +76,10 @@ private static String ideal;
       }
     }catch (Exception e){
       Logger.info("No assessments to show for member" + member.getName());
+      //If the member has no assessments we use the starting details
+      member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(), member.getStartWeight())));
+      member.setBmi(Utility.determineBMI(member.getHeight(), member.getStartWeight()));
+      //isIdealBodyWeight = Utility.isIdealBodyWeight(member, assessments.get(assessments.size() - 1)); //run this against the most recent assessment available
       render("dashboard.html", member, assessments);
     }
 
