@@ -57,7 +57,7 @@ private static String ideal;
     }
     catch(Exception e){
       Logger.info("No members to show for trainer" + trainer.getName());
-      render("trainerdashboard.html", trainer, members);
+      render("trainerdashboard.html", trainer);
     }
     render("trainerdashboard.html", trainer, members);
   }
