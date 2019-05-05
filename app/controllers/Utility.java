@@ -53,8 +53,9 @@ private static float weightAllowed;
                 }
             }
         }
+        return ideal;// depending on ideal or not
     }
-
+    
             public static boolean isIdealBodyWeight(Member member){
                 boolean ideal = false;
                 if(member.getGender().toUpperCase().equals("MALE")){//if the member is male
@@ -97,9 +98,7 @@ private static float weightAllowed;
 
 
 
-        }
-        return ideal;// depending on ideal or not
-    }
+
 
     public static float determineBMI(float height,float weight){
         //weight in kg over height (in cm squared)
