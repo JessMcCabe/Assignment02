@@ -77,11 +77,3 @@ Trainer(t1):
   - m1
   - m2
 
-Trainer(t2):
-  name: Jessie Matthews
-  gender: female
-  email: jessiematthews@playgym.com
-  password: secret
-  members:
-  - m1
-  - m2
