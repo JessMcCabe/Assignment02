@@ -58,6 +58,45 @@ private static float weightAllowed;
                 }
             }
 
+            public static boolean isIdealBodyWeight(Member member){
+                boolean ideal = false;
+                if(member.getGender().toUpperCase().equals("MALE")){//if the member is male
+                    if(member.getHeight()<=5){
+
+                        if(member.getStartWeight() <= 52 & member.getStartWeight() >= 48){
+                            ideal = true;
+                        }
+                    }
+                    else if (member.getHeight() >5){
+
+                        inchesOver = member.getHeight() - 5*10;
+                        weightAllowed = (maleBaseWeight + ((float)inchesOver*additionalWeight));
+                        if(member.getStartWeight() <= weightAllowed){
+
+                            ideal = true;
+                        }
+                    }
+
+
+
+
+                }
+                else     if(member.getGender().toUpperCase().equals("FEMALE")){//if the member is female
+                    if(member.getHeight()<=5){
+
+                        if(member.getStartWeight() <= 47.5 & member.getStartWeight() >= 43.5){
+                            ideal = true;
+                        }
+                    }
+                    else if (member.getHeight() >5){
+
+                        inchesOver = (member.getHeight() - 5)*10;
+                        weightAllowed = (femaleBaseWeight + ((float)inchesOver*additionalWeight));
+                        if(member.getStartWeight() <= (weightAllowed+2) & member.getStartWeight() >= (weightAllowed-2)){
+
+                            ideal = true;
+                        }
+                    }
 
 
 
