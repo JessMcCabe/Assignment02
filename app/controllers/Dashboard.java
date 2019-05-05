@@ -65,14 +65,19 @@ private static String ideal;
     Member member = Accounts.getLoggedInMember();
     member.setName( member.getName().toUpperCase());
       List<Assessment> assessments = member.assessments;
+    try {
       member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(), assessments.get(assessments.size() - 1).getWeight())));
       member.setBmi(Utility.determineBMI(member.getHeight(), assessments.get(assessments.size() - 1).getWeight()));
-      isIdealBodyWeight = Utility.isIdealBodyWeight(member, assessments.get(assessments.size() - 1));
+      isIdealBodyWeight = Utility.isIdealBodyWeight(member, assessments.get(assessments.size() - 1)); //run this against the most recent assessment available
       if (isIdealBodyWeight) {
         member.setIdeal("green");
       } else {
         member.setIdeal("red");
       }
+    }catch (Exception e){
+      Logger.info("No assessments to show for member" + member.getName());
+      render("dashboard.html", member, assessments);
+    }
 
     render("dashboard.html", member, assessments);
   }
