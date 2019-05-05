@@ -62,7 +62,6 @@ private static String ideal;
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
     member.setName( member.getName().toUpperCase());
-
       List<Assessment> assessments = member.assessments;
       member.setBmiCategory(Utility.determineBMICategory(Utility.determineBMI(member.getHeight(), assessments.get(assessments.size() - 1).getWeight())));
       member.setBmi(Utility.determineBMI(member.getHeight(), assessments.get(assessments.size() - 1).getWeight()));
@@ -72,8 +71,6 @@ private static String ideal;
       } else {
         member.setIdeal("red");
       }
-
-
 
     render("dashboard.html", member, assessments);
   }
