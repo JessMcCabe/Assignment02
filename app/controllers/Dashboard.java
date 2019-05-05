@@ -28,7 +28,7 @@ private static String ideal;
     member.setBmi(Utility.determineBMI(member.getHeight(),assessment.getWeight()));
 
     List<Assessment> assessments = member.assessments;
-    assessment.setTrend(Utility.determineTrend(assessment.getTotalMeasure(),assessments.get(assessments.size()-2).getTotalMeasure()));
+    assessment.setTrend(Utility.determineTrend(assessment.getTotalMeasure(),assessments.get(assessments.size()-1).getTotalMeasure()));
     member.save();
     Logger.info("Adding Assessment: Weight: " + weight + " Chest: "+ chest + " Thigh: " + thigh + " UpperArm: " + upperArm + " Waist: " + waist + " Hips: " + hips + " On: " + date);
     redirect("/dashboard");
